@@ -42,8 +42,7 @@ export interface Polygon<B> {
 export interface Region {
     latitude: number;
     longitude: number;
-    latitudeDelta: number;
-    longitudeDelta: number;
+    zoom: number;
 }
 
 export interface LatLng {

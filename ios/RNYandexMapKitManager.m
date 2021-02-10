@@ -121,10 +121,11 @@ RCT_CUSTOM_VIEW_PROPERTY(initialRegion, NSDictionary, RNYandexMapKitView)
 {
     double latitude = [[json valueForKey:@"latitude"] doubleValue];
     double longitude = [[json valueForKey:@"longitude"] doubleValue];
+    int zoom = [[json valueForKey:@"zoom"] intValue];
 
     YMKPoint* point = [YMKPoint pointWithLatitude:latitude longitude:longitude];
 
-    YMKCameraPosition* cameraPos = [YMKCameraPosition cameraPositionWithTarget:point zoom:10 azimuth:0 tilt:0];
+    YMKCameraPosition* cameraPos = [YMKCameraPosition cameraPositionWithTarget:point zoom:zoom azimuth:0 tilt:0];
 
     [view.map.mapWindow.map moveWithCameraPosition:cameraPos];
 }
